@@ -1,4 +1,4 @@
-import User from "../models/User.js";
+import User from "../models/user.js";
 import { sendPushNotification } from "../services/expoPush.service.js";
 export const registerToken = async (req,res) => {
   try {
