@@ -17,7 +17,7 @@ export const googleLogin = async (req, res) => {
       });
     } else {
       user.name = name;
-      user.photo = photo;
+      user.avatar = avatar;
       user.expoPushToken = expoPushToken;
       user.lastActiveDate = new Date();
 
