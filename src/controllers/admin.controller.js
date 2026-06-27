@@ -11,6 +11,12 @@ export const sendBroadcastNotification = async (req, res) => {
         });
       }
 
+      console.log(
+  users.map((u) => ({
+    email: u.email,
+    token: u.expoPushToken,
+  }))
+);
       const users = await User.find({});
 
       for (const user of users) {
@@ -38,12 +44,15 @@ export const sendBroadcastNotification = async (req, res) => {
 
 export const sendUserNotification =async (req, res) => {
     try {
+      
+      console.log("data :", req.body);
       const {
         expoPushToken,
         title,
         body,
       } = req.body;
 
+      
       await sendPushNotification(
         expoPushToken,
         title,
