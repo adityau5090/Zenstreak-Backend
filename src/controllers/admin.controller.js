@@ -11,14 +11,15 @@ export const sendBroadcastNotification = async (req, res) => {
         });
       }
 
+      
+      const users = await User.find({});
+
       console.log(
   users.map((u) => ({
     email: u.email,
     token: u.expoPushToken,
   }))
 );
-      const users = await User.find({});
-
       for (const user of users) {
         if (!user.expoPushToken) continue;
 
